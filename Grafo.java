@@ -91,12 +91,7 @@ public class Grafo extends JPanel {
         add(panel, BorderLayout.NORTH);
     }
 
-    // Método para calcular a distância entre dois estados (distância euclidiana)
-    private int calcularDistancia(No no1, No no2) {
-        int dx = no2.getX() - no1.getX();
-        int dy = no2.getY() - no1.getY();
-        return (int) Math.round(Math.sqrt(dx * dx + dy * dy));  // Distância Euclidiana arredondada
-    }
+   
 
     // Método para encontrar o menor caminho entre origem e destino usando Dijkstra
     private void encontrarMenorPeso(No origem, No destino) {
@@ -168,12 +163,18 @@ public class Grafo extends JPanel {
         // Desenha a imagem de fundo
         g2d.drawImage(imagemFundo, 0, 0, getWidth(), getHeight(), this);
 
+        // Defina a nova fonte com o tamanho desejado
+        Font fonte = new Font("Arial", Font.BOLD, 20);
+        // Altere o tamanho para o desejado
+        g2d.setFont(fonte);
+
         // Desenha as arestas
         for (Aresta aresta : arestas) {
             No no1 = aresta.getNo1();
             No no2 = aresta.getNo2();
+            
             if (caminhoMinimo.contains(aresta)) {
-                g2d.setColor(Color.RED);  // Destaca o caminho mínimo
+                g2d.setColor(Color.GREEN);  // Destaca o caminho mínimo
             } else {
                 g2d.setColor(Color.BLACK);
             }
@@ -192,14 +193,5 @@ public class Grafo extends JPanel {
         }
     }
 
-    public static void main(String[] args) {
-        JFrame frame = new JFrame();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        Grafo grafo = new Grafo();
-        frame.add(grafo);
-        frame.setSize(800, 600);  // Ajuste o tamanho da janela
-        frame.setVisible(true);
-        grafo.repaint();
-    }
 }
 
