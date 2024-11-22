@@ -174,7 +174,7 @@ public class Grafo extends JPanel {
             No no2 = aresta.getNo2();
             
             if (caminhoMinimo.contains(aresta)) {
-                g2d.setColor(Color.GREEN);  // Destaca o caminho mínimo
+                g2d.setColor(Color.blue);  // Destaca o caminho mínimo
             } else {
                 g2d.setColor(Color.BLACK);
             }

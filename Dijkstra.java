@@ -11,6 +11,7 @@ public class Dijkstra {
     }
 
     public List<Aresta> dijkstra(No origem, No destino) {
+        LocalDateTime startTime = LocalDateTime.now(); 
         int V = nos.size();
         int[] distances = new int[V];
         boolean[] visited = new boolean[V];
@@ -28,7 +29,6 @@ public class Dijkstra {
         }
 
         distances[origemIndex] = 0;
-        LocalDateTime startTime = LocalDateTime.now(); 
 
         // Algoritmo de Dijkstra
         for (int count = 0; count < V - 1; count++) {

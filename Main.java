@@ -6,7 +6,7 @@ public class Main {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Grafo grafo = new Grafo();
         frame.add(grafo);
-        frame.setSize(800, 600);  // Ajuste o tamanho da janela
+        frame.setSize(800, 800); 
         frame.setVisible(true);
         grafo.repaint();
     }
